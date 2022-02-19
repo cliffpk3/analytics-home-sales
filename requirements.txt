@@ -95,7 +95,7 @@ scipy==1.8.0
 Send2Trash==1.8.0
 setuptools==60.9.0
 Shapely==1.8.0
-sip==4.19.13
+sip==6.5.1
 six==1.16.0
 smmap==5.0.0
 stack-data==0.2.0
