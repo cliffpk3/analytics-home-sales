@@ -5,7 +5,6 @@ import plotly.express as px
 import folium
 import geopandas
 from millify import millify
-import matplotlib.pyplot as plt
 from streamlit_folium import folium_static
 from folium.plugins import MarkerCluster
 
@@ -109,7 +108,7 @@ def charts(houses):
         st.write('  \n')
         st.write('  \n')
         st.metric(label='Worth Buying', value=f'{houses[houses["worth_buying"] == 1]["worth_buying"].count()}/{houses["worth_buying"].count()}', delta=f'{(houses[houses["worth_buying"] == 1]["worth_buying"].count()/houses["worth_buying"].count())*100:.2f}% worths!')
-        st.metric(label='Total Investment x Profit Values', value=f'U${houses[houses["worth_buying"] == 1]["price"].sum()}', delta=f'U${millify(houses[houses["worth_buying"] == 1]["profit_value"].sum(), precision=2)} profit!')
+        st.metric(label='Total Investment x Profit Values', value=f'U${millify(houses[houses["worth_buying"] == 1]["price"].sum(), precision=2)}', delta=f'U${millify(houses[houses["worth_buying"] == 1]["profit_value"].sum(), precision=2)} profit!')
 
     st.subheader('#2) Once the real state is bought, for how much it should be sold?')
     houses2 = houses[houses['worth_buying'] == 1]
