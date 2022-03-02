@@ -11,7 +11,7 @@ from folium.plugins import MarkerCluster
 #Options:
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
 st.set_page_config(layout='wide')
-path = 'reworked_data.csv'
+path = 'reworked_kc_house_data.csv'
 geopath = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 counter = 0
 
@@ -88,7 +88,7 @@ def map_filters(df):
 
 def charts(houses):
 
-    st.subheader('#1) Which real states must be bought by Home Sales and for how much?')
+    st.subheader('#1) Which real state must be bought by Home Sales and for how much?')
     x1, x2 = st.columns([4,1])
     with x1:
         fig = px.scatter(houses, x='price', y='yr_built', title='<b>Worth Buying Properties</b>',
@@ -110,7 +110,7 @@ def charts(houses):
         st.metric(label='Worth Buying', value=f'{houses[houses["worth_buying"] == 1]["worth_buying"].count()}/{houses["worth_buying"].count()}', delta=f'{(houses[houses["worth_buying"] == 1]["worth_buying"].count()/houses["worth_buying"].count())*100:.2f}% worths!')
         st.metric(label='Total Investment x Profit Values', value=f'U${millify(houses[houses["worth_buying"] == 1]["price"].sum(), precision=2)}', delta=f'U${millify(houses[houses["worth_buying"] == 1]["profit_value"].sum(), precision=2)} profit!')
 
-    st.subheader('#2) Once the real state is bought, for how much it should be sold?')
+    st.subheader('#2) Once the real state is bought, for how much should it be sold?')
     houses2 = houses[houses['worth_buying'] == 1]
     fig2 = px.scatter(houses2, x='selling_price', y='yr_built', title='<b>Selling Price x Profit</b>',
                       height=300, color_discrete_sequence=['#AB63FA'], opacity=0.9,
@@ -163,13 +163,13 @@ def counter():
     st.session_state.count += 1
 
 def intro():
-    st.write('Home Sales is a company specialized in buying and reselling real states.  \n'
+    st.write('Home Sales is a ficticious company specialized in buying and reselling real states.  \n'
              'Our business model consists of analyzing features and locations of properties to perform '
              'advantageous buying and selling operations.  \n'
              'Currently, the objective of data analysis is to find and filter those properties with safe '
              'purchase and profit potential through the answer of two business questions:  \n\n'
-             '__Question 1) Which real states must be bought by Home Sales and for how much?__  \n'
-             '__Question 2) Once the real state is bought, for how much it should be sold?__  \n\n'
+             '__Question 1) Which real state must be bought by Home Sales and for how much?__  \n'
+             '__Question 2) Once the real state is bought, for how much should it be sold?__  \n\n'
             'The estimated profit (profit_value) on the purchase of a property is about 30% of its purchase value.  \n'
             'This application allows you to travel beyond these data and properties, choosing and filtering its features, locations and values.')
     st.button('Show me the data!', on_click=counter)
@@ -185,4 +185,4 @@ if __name__ == '__main__':
         houses = map_filters(df)
         charts(houses)
         maps(geofile, houses)
-        st.sidebar.caption('[_Contact me. :email: :flag-br:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
+        st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
