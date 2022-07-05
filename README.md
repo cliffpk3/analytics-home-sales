@@ -1,4 +1,4 @@
-#1. Business Problem
+<h1>1. Business Problem</h1>
 Home Sales is a fictitious company specialized in buying and reselling real state. 
 Our business model consists of analyzing features and locations of properties to perform advantageous buying and selling operations. 
 Currently, the objective of data analysis is to find and filter those properties with safe purchase and potential profit.
