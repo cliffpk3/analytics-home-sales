@@ -39,7 +39,6 @@ b) Duplicated values in column "ID" will be excluded.
 | worth_buying        | Indicates if property should be purchased; according to the business assumptions                               |
 | profit_value        | Value that represents the 20% addition over the purchasing price as profit                                     |
 | selling_price       | Reselling property price                                                                                       |
-|---------------------|----------------------------------------------------------------------------------------------------------------|
 
 <h2>3. Solution strategy</h2>
 <h4>3.1 Load data from Kaggle (https://www.kaggle.com/shivachandel/kc-house-data);</h4>
