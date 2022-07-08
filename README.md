@@ -58,7 +58,8 @@ e) Generate worth-buying list.
 <h2>4. Top 3 business insights</h2>
 <h4>4.1 Properties announced in the winter are, at least, 20% cheaper, due to low mobility and internet competition;</h4>
 a) Application: Multiple properties purchase during the winter may be more interesting, due to the possibility of a bigger discount;
-<img align="center" alt="4_1" src="https://user-images.githubusercontent.com/86201991/155598476-f1c8b94d-d634-49c6-95a2-b24331f38845.png" />
+<body style="background-color:grey;">
+<img align="center" alt="4_1" src="https://user-images.githubusercontent.com/86201991/155598476-f1c8b94d-d634-49c6-95a2-b24331f38845.png" /></body>
 The average price of houses announced during the winter is U$544.860,00, meanwhile, the average price of those houses announced in any other season is U$527.897,00. The difference between these values is only 3.11%. Besides, even if detailing the data even more, we can't see significant difference in prices when the properties are separeted by zipcode. Therefore, as the price difference is not relevant, it comes to a conclusion that this is a false business insight.
 
 <h4>4.2 Renewed houses and apartments are at least 30% more expensive than non-renewed ones;</h4>
