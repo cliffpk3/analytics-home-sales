@@ -1,4 +1,4 @@
-https://anhsapp.herokuapp.com/
+https://web-production-a7d3.up.railway.app/
 
 <h2>1. Business Problem</h2>
 Home Sales is a fictitious company specialized in buying and reselling real state. 
@@ -54,7 +54,7 @@ d) Determine what properties are worth buying (worth_buying) and the profit valu
 e) Generate worth-buying list.
 <h4>3.3 Explore and analyse data through bar charts;</h4>
 <h4>3.4 Validate insights.</h4>
-<h4>3.5 Develop interactive dashboard through Streamlit and Heroku;</h4>
+<h4>3.5 Develop interactive dashboard through Streamlit and Railway;</h4>
 <h4>3.6 Analyse result and conclusion;</h4>
 
 <h2>4. Top 3 business insights</h2>
@@ -78,5 +78,5 @@ Besides, the second chart details even more the contrast of prices and allows us
 After cleaning, analysing and reformulating the data, it was possible to efficiently highlight the best properties for purchase and resale, 
 allowing a dynamic visualization of the properties, as well as its features and locations through graphic visualization and price comparisons.
 Due to these results, the worth buying properties were listed in a document which contains the property identification (id), buying price (price) and selling price (selling_price).
-An application was developed using Streamlit and Heroku, available to access the dataframe and its bar charts in any platform.
+An application was developed using Streamlit and Railway, available to access the dataframe and its bar charts in any platform.
 The estimated profit from the properties resale is U$777.552.813,20, standing out the real possibility of good results for a great financial feedback.
