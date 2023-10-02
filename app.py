@@ -12,7 +12,7 @@ from folium.plugins import MarkerCluster
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
 st.set_page_config(layout='wide')
 path = 'reworked_kc_house_data.csv'
-geopath = 'https://opendata.arcgis.com/datasets/73f5184d9062458c81ff86e5f5bcdbb8_9.geojson'
+geopath = 'Zip_Codes.geojson'
 #geopath = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 counter = 0
 
