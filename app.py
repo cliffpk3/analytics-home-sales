@@ -191,4 +191,6 @@ def intro():
 #	st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
 print('oi')
 geofile = get_geodata(geopath)
+df = get_data(path)
 st.write(geofile.head())
+st.write(df.head())
