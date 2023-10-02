@@ -7,6 +7,12 @@ import geopandas
 from millify import millify
 from streamlit_folium import folium_static
 from folium.plugins import MarkerCluster
+#20231002
+import ssl
+import urllib3
+import requests
+import io
+#/20231002
 
 #Options:
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
@@ -177,16 +183,47 @@ def intro():
             'This application allows you to travel beyond these data and properties, choosing and filtering its features, locations and values.')
     st.button('Show me the data!', on_click=counter)
 
-st.title('Home Sales Data Overview :cityscape:')
-if __name__ == '__main__':
-    if st.session_state.count % 2 == 0:
-        intro()
-    if st.session_state.count % 2 != 0:
-        df = get_data(path)
-        geofile = get_geodata(geopath)
-        df = sample(df)
-        houses = map_filters(df)
-        charts(houses)
-        maps(geofile, houses)
-        st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
+#20231002
+#class CustomHttpAdapter(requests.adapters.HTTPAdapter):
+#    # "Transport adapter" that allows us to use custom ssl_context.
+#
+#    def __init__(self, ssl_context=None, **kwargs):
+#        self.ssl_context = ssl_context
+#        super().__init__(**kwargs)
+#
+#    def init_poolmanager(self, connections, maxsize, block=False):
+#        self.poolmanager = urllib3.poolmanager.PoolManager(
+#            num_pools=connections,
+#            maxsize=maxsize,
+#            block=block,
+#            ssl_context=self.ssl_context,
+#        )
+#
+#def get_legacy_session():
+#    ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+#    ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT
+#    session = requests.session()
+#    session.mount("https://", CustomHttpAdapter(ctx))
+#    return session
 
+#URL = "https://homesales-carli.streamlit.app"
+#res = get_legacy_session().get(URL)
+
+
+#/20231002
+
+#st.title('Home Sales Data Overview :cityscape:')
+#if __name__ == '__main__':
+#if st.session_state.count % 2 == 0:
+#	intro()
+#if st.session_state.count % 2 != 0:
+#	df = get_data(path)
+#	geofile = get_geodata(geopath)
+#	df = sample(df)
+#	print(geofile)
+#	houses = map_filters(df)
+#	charts(houses)
+#	maps(geofile, houses)
+#	st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
+geofile = get_geodata(geopath)
+print(geofile.head())
