@@ -21,12 +21,12 @@ path = 'reworked_kc_house_data.csv'
 geopath = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 counter = 0
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def get_data(path):
     df = pd.read_csv(path)
     return df
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def get_geodata(geopath):
     geofile = geopandas.read_file(geopath)
     return geofile
