@@ -193,4 +193,4 @@ def intro():
 
 geofile = get_geodata(geopath)
 #st.dataframe(geofile.head())
-pd.dataframe(geofile.head())
+pd.DataFrame(geofile.head())
