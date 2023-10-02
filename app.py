@@ -192,5 +192,5 @@ def intro():
     st.write('Bom demais.  \n')
 
 geofile = get_geodata(geopath)
-st.dataframe(geofile.head())
+#st.dataframe(geofile.head())
 pd.dataframe(geofile.head())
