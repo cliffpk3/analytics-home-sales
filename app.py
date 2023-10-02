@@ -30,6 +30,7 @@ def get_data(path):
 @st.cache(allow_output_mutation=True)
 def get_geodata(geopath):
     geofile = geopandas.read_file(geopath)
+    st.dataframe(geofile)
     return geofile
 
 def sample(df):
