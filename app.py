@@ -189,6 +189,8 @@ def intro():
 #	charts(houses)
 #	maps(geofile, houses)
 #	st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
-print('oi')
+    st.write('Bom demais.  \n')
+
 geofile = get_geodata(geopath)
-print(geofile.head())
+st.dataframe(geofile.head())
+pd.dataframe(geofile.head())
