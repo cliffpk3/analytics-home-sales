@@ -7,6 +7,11 @@ import geopandas
 from millify import millify
 from streamlit_folium import folium_static
 from folium.plugins import MarkerCluster
+#20231002
+import ssl
+import urllib3
+import requests
+import io
 
 #Options:
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
@@ -14,6 +19,9 @@ st.set_page_config(layout='wide')
 path = 'reworked_kc_house_data.csv'
 geopath = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 counter = 0
+#20231002
+URL = "homesales-carli.streamlit.app"
+res = get_legacy_session().get(URL)
 
 @st.cache(allow_output_mutation=True)
 def get_data(path):
@@ -24,6 +32,29 @@ def get_data(path):
 def get_geodata(geopath):
     geofile = geopandas.read_file(geopath)
     return geofile
+
+#20231002
+class CustomHttpAdapter(requests.adapters.HTTPAdapter):
+    # "Transport adapter" that allows us to use custom ssl_context.
+
+    def __init__(self, ssl_context=None, **kwargs):
+        self.ssl_context = ssl_context
+        super().__init__(**kwargs)
+
+    def init_poolmanager(self, connections, maxsize, block=False):
+        self.poolmanager = urllib3.poolmanager.PoolManager(
+            num_pools=connections,
+            maxsize=maxsize,
+            block=block,
+            ssl_context=self.ssl_context,
+        )
+
+def get_legacy_session():
+    ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+    ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT
+    session = requests.session()
+    session.mount("https://", CustomHttpAdapter(ctx))
+    return session
 
 def sample(df):
     f_fulldata = st.checkbox('Use full data sample')
@@ -186,3 +217,4 @@ if __name__ == '__main__':
         charts(houses)
         maps(geofile, houses)
         st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
+
