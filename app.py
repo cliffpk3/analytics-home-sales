@@ -54,7 +54,7 @@ def get_legacy_session():
     return session
 
 #20231002
-URL = "homesales-carli.streamlit.app"
+URL = "https://homesales-carli.streamlit.app"
 res = get_legacy_session().get(URL)
 
 def sample(df):
