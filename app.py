@@ -14,7 +14,7 @@ import requests
 import io
 #/20231002
 
-Options:
+#Options:
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
 st.set_page_config(layout='wide')
 path = 'reworked_kc_house_data.csv'
@@ -27,7 +27,7 @@ def get_data(path):
     df = pd.read_csv(path)
     return df
 
-#@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def get_geodata(geopath):
     geofile = geopandas.read_file(geopath)
     return geofile
