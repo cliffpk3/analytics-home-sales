@@ -176,21 +176,16 @@ def intro():
     st.button('Show me the data!', on_click=counter)
 
 
-#st.title('Home Sales Data Overview :cityscape:')
-#if __name__ == '__main__':
-#if st.session_state.count % 2 == 0:
-#	intro()
-#if st.session_state.count % 2 != 0:
-#	df = get_data(path)
-#	geofile = get_geodata(geopath)
-#	df = sample(df)
-#	print(geofile)
-#	houses = map_filters(df)
-#	charts(houses)
-#	maps(geofile, houses)
-#	st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
-print('oi')
-geofile = get_geodata(geopath)
-df = get_data(path)
-st.write(geofile.head())
-st.write(df.head())
+st.title('Home Sales Data Overview :cityscape:')
+if __name__ == '__main__':
+if st.session_state.count % 2 == 0:
+	intro()
+if st.session_state.count % 2 != 0:
+	df = get_data(path)
+	geofile = get_geodata(geopath)
+	df = sample(df)
+	print(geofile)
+	houses = map_filters(df)
+	charts(houses)
+	maps(geofile, houses)
+	st.sidebar.caption('[_Contact me. :email:_](https://www.linkedin.com/in/ricardo-estevam-carli-475461181/)')
