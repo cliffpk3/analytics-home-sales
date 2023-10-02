@@ -31,6 +31,7 @@ def get_data(path):
 def get_geodata(geopath):
     geofile = geopandas.read_file(geopath)
     #st.dataframe(geofile)
+    print(geofile)
     return geofile
 
 def sample(df):
