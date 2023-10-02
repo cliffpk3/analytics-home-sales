@@ -181,31 +181,30 @@ def intro():
     st.button('Show me the data!', on_click=counter)
 
 #20231002
-class CustomHttpAdapter(requests.adapters.HTTPAdapter):
-    # "Transport adapter" that allows us to use custom ssl_context.
+#class CustomHttpAdapter(requests.adapters.HTTPAdapter):
+#    # "Transport adapter" that allows us to use custom ssl_context.
+#
+#    def __init__(self, ssl_context=None, **kwargs):
+#        self.ssl_context = ssl_context
+#        super().__init__(**kwargs)
+#
+#    def init_poolmanager(self, connections, maxsize, block=False):
+#        self.poolmanager = urllib3.poolmanager.PoolManager(
+#            num_pools=connections,
+#            maxsize=maxsize,
+#            block=block,
+#            ssl_context=self.ssl_context,
+#        )
+#
+#def get_legacy_session():
+#    ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+#    ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT
+#    session = requests.session()
+#    session.mount("https://", CustomHttpAdapter(ctx))
+#    return session
 
-    def __init__(self, ssl_context=None, **kwargs):
-        self.ssl_context = ssl_context
-        super().__init__(**kwargs)
-
-    def init_poolmanager(self, connections, maxsize, block=False):
-        self.poolmanager = urllib3.poolmanager.PoolManager(
-            num_pools=connections,
-            maxsize=maxsize,
-            block=block,
-            ssl_context=self.ssl_context,
-        )
-
-def get_legacy_session():
-    ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
-    ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT
-    session = requests.session()
-    session.mount("https://", CustomHttpAdapter(ctx))
-    return session
-
-
-URL = "https://homesales-carli.streamlit.app"
-res = get_legacy_session().get(URL)
+#URL = "https://homesales-carli.streamlit.app"
+#res = get_legacy_session().get(URL)
 
 
 #/20231002
@@ -219,8 +218,8 @@ if __name__ == '__main__':
         geofile = get_geodata(geopath)
         df = sample(df)
         #20231002
-        df = pd.read_csv(io.BytesIO(res.content))
-        st.write(df)
+        #df = pd.read_csv(io.BytesIO(res.content))
+        #st.write(df)
         #/20231002
         houses = map_filters(df)
         charts(houses)
