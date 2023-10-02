@@ -192,5 +192,5 @@ def intro():
 print('oi')
 geofile = get_geodata(geopath)
 df = get_data(path)
-st.write(geofile.head()['geometry'][0])
+st.write(geofile.head())
 st.write(df.head())
