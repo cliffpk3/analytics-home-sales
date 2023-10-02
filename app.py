@@ -18,7 +18,7 @@ import io
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
 st.set_page_config(layout='wide')
 path = 'reworked_kc_house_data.csv'
-geopath = 'https://opendata.arcgis.com/api/v3/datasets/73f5184d9062458c81ff86e5f5bcdbb8_9/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1'
+geopath = 'https://opendata.arcgis.com/datasets/73f5184d9062458c81ff86e5f5bcdbb8_9.geojson'
 #geopath = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 counter = 0
 
@@ -30,7 +30,7 @@ def get_data(path):
 @st.cache(allow_output_mutation=True)
 def get_geodata(geopath):
     geofile = geopandas.read_file(geopath)
-    st.dataframe(geofile)
+    #st.dataframe(geofile)
     return geofile
 
 def sample(df):
