@@ -56,6 +56,8 @@ def get_legacy_session():
 #20231002
 URL = "https://homesales-carli.streamlit.app"
 res = get_legacy_session().get(URL)
+df = pd.read_excel(io.BytesIO(res.content), skiprows=3, engine="xlrd")
+st.write(df)
 
 def sample(df):
     f_fulldata = st.checkbox('Use full data sample')
