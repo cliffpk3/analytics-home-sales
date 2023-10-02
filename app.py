@@ -19,9 +19,6 @@ st.set_page_config(layout='wide')
 path = 'reworked_kc_house_data.csv'
 geopath = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 counter = 0
-#20231002
-URL = "homesales-carli.streamlit.app"
-res = get_legacy_session().get(URL)
 
 @st.cache(allow_output_mutation=True)
 def get_data(path):
@@ -55,6 +52,10 @@ def get_legacy_session():
     session = requests.session()
     session.mount("https://", CustomHttpAdapter(ctx))
     return session
+
+#20231002
+URL = "homesales-carli.streamlit.app"
+res = get_legacy_session().get(URL)
 
 def sample(df):
     f_fulldata = st.checkbox('Use full data sample')
