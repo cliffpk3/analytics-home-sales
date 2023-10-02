@@ -220,7 +220,7 @@ if __name__ == '__main__':
         df = get_data(path)
         geofile = get_geodata(geopath)
         df = sample(df)
-		st.dataframe(geofile)
+		print(geofile)
         #houses = map_filters(df)
         #charts(houses)
         #maps(geofile, houses)
