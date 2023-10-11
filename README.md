@@ -75,6 +75,7 @@ a) Application: Allows studying better possibilities of buying these properties 
 The first plot shows us the median price of all properties, classifying those with and without waterfront view. The difference between those values is U$950.000. In this ocasion, waterfront properties value exceeds 300% of the value of non-waterfront properties.
 Besides, the second chart details even more the contrast of prices and allows us to realize the valorization of waterfront houses far beyond the estimated value of 20%. This proves the point of the insight, validating it and raising questions about the profit potential of buying waterfront houses.
 
+<h2>5. Conclusion</h2>
 After cleaning, analysing and reformulating the data, it was possible to efficiently highlight the best properties for purchase and resale, 
 allowing a dynamic visualization of the properties, as well as its features and locations through graphic visualization and price comparisons.
 Due to these results, the worth buying properties were listed in a document which contains the property identification (id), buying price (price) and selling price (selling_price).
